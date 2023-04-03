@@ -98,7 +98,7 @@ public class Insulin extends Measurement {
         }
         if (getCorrection() != 0) {
             if (!isFirstValue) {
-                stringBuilder.append(", ");
+                stringBuilder.append(",\n");
             }
             stringBuilder.append(String.format("%s %s",
                 PreferenceStore.getInstance().getMeasurementForUi(getCategory(), correction),
@@ -107,7 +107,7 @@ public class Insulin extends Measurement {
         }
         if (getBasal() != 0) {
             if (!isFirstValue) {
-                stringBuilder.append(", ");
+                stringBuilder.append(",\n");
             }
             stringBuilder.append(String.format("%s %s",
                 PreferenceStore.getInstance().getMeasurementForUi(getCategory(), basal),

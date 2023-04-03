@@ -145,6 +145,8 @@ public class FoodDao extends BaseServerDao<Food> {
             if (query != null && query.length() > 0) {
                 where.and();
                 where.like(Food.Column.NAME, new SelectArg("%" + query + "%"));
+                where.or();
+                where.like(Food.Column.BRAND, new SelectArg("%" + query + "%"));
             }
 
             int whereTypeCount = 0;
